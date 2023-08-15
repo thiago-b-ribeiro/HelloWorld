@@ -1,0 +1,340 @@
+[[file:~/Imagens/licoesAprendidas.jpeg]]
+
+#+TITLE: Repositório de Conhecimento
+#+AUTHOR: Thiago B. Ribeiro
+#+DATE: 21 de julho de 2023
+
+* LINUX
+
+** CONCEITOS
+   - *Daemons*: é um serviço que roda no background do sistema  operacional, mais conhecido  em ambi-
+     entes Unix-Like como distribuições Linux. Basicamente ele  tem como objetivo, ser  associado a
+     uma aplicação principal, mas funcionando de forma paralela a ela. Em sistemas Unix-Like geral-
+     mente serviços com a letra “d” minúscula no final são daemons, como por exemplo  httpd, sshd e
+     syslogd.
+
+     Em um  ambiente Unix, o processo  pai de um  daemon  normalmente é, mas nem sempre, o processo
+     init. Um daemon normalmente é criado ou por um processo que bifurca um processo filho  e então
+     sai imediatamente ("fork off and die"), fazendo  assim com que o  init adote o processo filho,
+     ou pelo processo init  executando diretamente o  daemon. Em um senso  estritamente técnico, um
+     processo  de sistema do  tipo Unix  é um daemon  quando seu  processo pai termina e o daemon é
+     atribuído ao processo init (número de processo 1) como seu  processo pai e não possui terminal
+     de controle. Entretanto, mais comumente, um daemon pode ser qualquer processo de plano de fun-
+     do, seja um filho do processo init ou não. 
+
+** COMANDOS/INFORMAÇÕES
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | echo $XDG_CURRENT_DESKTOP                       | Informa qual o gerenciador gráfico utilizado     |
+   | nvidia-smi                                      | Verifica o driver nvidia instalado               |
+   | apt list --installed                            | Listar pacotes instalados                        |
+   | apt search <nomePacote>                         | Pesquisa pacotes nos repositórios                |
+   |-------------------------------------------------+--------------------------------------------------|
+
+
+* EMACS
+
+*** COMANDOS/INFORMAÇÕES DIVERSAS
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | (load-theme '<temaEscolhido>)                   | No arquivo init.el inserir o comando             |
+   | ~/.emacs.d                                      | Pasta de configurações                           |
+   | init.el                                         | Arquivos de inicialização                        |
+   | require                                         | Gerenciador de pacotes                           |
+   | C-g                                             | Cancela comandos                                 |
+   | C-x C-c                                         | Sai do emacs                                     |
+   | C-x C-e                                         | Executar código LISP                             |
+   | M-x eval-region                                 | Executar bloco de código LISP                    |
+   | M-x package-refresh-contents                    | Atualiza descrição dos pacotes                   |
+   | M-x list-packages                               | Lista pacotes disponíveis e instalados           |
+   | M-x packages-initialize                         | Carrega e ativa pacotes                          |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** ARQUIVO - Onde e com que nome os trabalhos são salvos
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | C-x C-f                                         | Abrir/criar arquivos                             |
+   | C-x C-s                                         | Salvar                                           |
+   | C-x C-w                                         | Salvar como                                      |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** BUFFERS - O conteúdo que está sendo trabalhado/exibido
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | C-x C-b                                         | Menu de buffers (abre em outra janela)           |
+   | C-x b                                           | Troca de buffer / novo buffer                    |
+   | C-x ←                                           | Circular para o buffer anterior                  |
+   | C-x →                                           | Circular para o próximo buffer                   |
+   | C-x h                                           | Selecionar o conteúdo do buffer                  |
+   | C-x i                                           | Inserir conteúdo de arquivo no buffer            |
+   | C-x C-v                                         | Substitui buffer pelo conteúdo de um arquivo     |
+   | C-x k                                           | Matar o buffer                                   |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** JANELAS - Divisões do frame onde o conteúdo será trabalhado/exibido
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | C-x o                                           | Circular pelas janelas                           |
+   | C-x 0                                           | Fechar janela em foco                            |
+   | C-x 1                                           | Fechar todas as janelas                          |
+   | C-x 2                                           | Criar janela abaixo                              |
+   | C-x 3                                           | Criar janela ao lado                             |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** FRAMES - Instâncias da mesma sessão do Emacs
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | C-x 5 o                                         | Circular pelos frames                            |
+   | C-x 5 2                                         | Criar novo frame                                 |
+   | C-x 5 0                                         | Fechar frame em foco                             |
+   | C-x 5 1                                         | Fechar todos dos outros frames                   |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** EDIÇÃO DE TEXTOS
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | C-/                                             | Desfazer ações                                   |
+   | C-g C-/                                         | Refazer ações                                    |
+   | M-%                                             | Encontrar e trocar                               |
+   | M-c                                             | Deixa a inicial em maiúscula                     |
+   | M-l                                             | Deixa a palavra em minúscula                     |
+   | M-u                                             | Deixa a palavra em maiúscula                     |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** SELEÇÃO
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | Pressionar Shifit e mover cursor                | Seleciona texto                                  |
+   | C-SPC o                                         | Inicia/finaliza marcação                         |
+   | C-x h                                           | Selecionar tudo                                  |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** ÁREA DE TRANSFERÊNCIA
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | M-w                                             | Copiar                                           |
+   | C-w                                             | Recortar                                         |
+   | C-y                                             | Colar                                            |
+   | M-y                                             | Permite circular pela da área de transferência   |
+   | C-k                                             | Recortar do cursor ao fim da linha               |
+   | C-a C-k                                         | Recortar do início ao fim da linha               |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** VERIFICAÇÃO ORTOGRÁFICA
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | M-$                                             | Verificar palavra                                |
+   | M-x ispell                                      | Verificar buffer                                 |
+   | M-x                                             | Suspender verificação                            |
+   | M-x ispell-kill-ispell                          | Matar a verificação ( precisa estar suspenso)    |
+   | M-x ispell-change-dictionary RET                | Trocar dicionário                                |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** INTERFACE
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | M-x display-line-numbers-mode                   | Numeração de linhas                              |
+   | M-x hl-line-mode                                | Destaque da linha atual                          |
+   | M-x delete-selection-mode                       | Substituir seleção ao digitar                    |
+   | M-x cua-mode                                    | Copiar e colar com C-c e C-v                     |
+   | M-x set-frame-font [ENTER] FONTE-TAMANHO        | Mudar fonte                                      |
+   | M-x set-foreground-color [ENTER] COR            | Mudar cor do texto                               |
+   | M-x set-background-color [ENTER] COR            | Mudar cor do fundo                               |
+   | M-x load-theme [ENTER] TEMA                     | Carregar um tema                                 |
+   | M-x menu-bar-mode                               | Ocultar/exibir barra de menu                     |
+   | M-x tool-bar-mode                               | Ocultar/exibir barra de ferramentas              |
+   | M-x scroll-bar-mode                             | Ocultar/exibir barra de rolagem                  |
+   | M-x shell                                       | Executar comando SHELL                           |
+   | M-x ansi-term /bin/bash                         | Abrir terminal                                   |
+   |-------------------------------------------------+--------------------------------------------------|
+
+
+* ORG MODE
+
+*** TODOs 
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | Em um cabeçalho apertar Shift-seta lateral      | Criar um TODO                                    |
+   | Shift-seta lateral                              | Alterar status do TODO                           |
+   | C-c C-t <seleciona a letra correspondente>      |                                                  |
+   | M-Shift-RET                                     | Adicionar itens TODO                             |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Mova o cursor para a tarefa desejada            | Agendar TODO                                     |
+   | C-c C-s                                         |                                                  |
+   | Escolha a data desejada                         |                                                  |
+   | C-c a a para consultar a agenda                 |                                                  |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Acrescentar arquivo no ~/.emacs/init.el         | Lista global de TODOs                            |
+   | #+begin_src elisp                               |                                                  |
+   | (setq org-agenda-files (list "end/arq.org"))    |                                                  |
+   | #+end_src                                       |                                                  |
+   |-------------------------------------------------+--------------------------------------------------|
+   | C-c a t                                         | Acessar todos os TODOs da lista global           |
+   | Teclar RET na linha correspondente              | Acessar origem do TODO da lista global           |
+   | Teclar t na linha correspondente                | Concluir o TODO da lista global                  |
+   |-------------------------------------------------+--------------------------------------------------|
+
+*** DIVERSOS
+
+   | COMANDO/INFORMAÇÃO----------------------------- | DESCRIÇAO--------------------------------------- |
+   |                                                 |                                                  |
+   | [ [link] [decricao do link] ] - sem espaços     | Inserir link externo                             |
+   | < <Âncora> > Item - sem espaços                 | Cria uma âncora naquele ponto do documento       |
+   | [ [nomeDoTópico] ] - sem espaços                | Cria link para acessar alguma âncora no documen. |
+   | C-c C-o                                         | Abrir link                                       |
+   | Shift-TAB                                       | Colapsar/expandir todos os tópicos               |
+   | TAB                                             | Colapsar/expandir um tópico                      |
+   | M-setas para cima ou para baixo                 | Mover os tópicos                                 |
+   | M-S-setas para cima ou para baixo               | Mover os itens                                   |
+   | C-RET                                           | Inserir cabeçalho                                |
+   | M-setas para os lados                           | Aumenta ou diminui nível dos cabeçalho e listas  |
+   | C-j                                             | Vai para a pŕoxima linha com identação           |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Criar nomes das colunas divididas por pipe      | Criar tabelas                                    |
+   | Inserir as linhas abaixo das colunas com pipe   |                                                  |
+   | TAB                                             | Para alinhar os pipes                            |
+   | C-BackSpace                                     | Apaga linha da tabela                            |
+   | M-RET                                           | Insere a próxima linha                           |
+   | Pipe-TAB                                        | Gera linha horizontal de separação               |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Digitar - NomeDoItem                            | Cria uma lista não ordenada                      |
+   | Digitar 1. NomeDoItem                           | Cria uma lista ordenada                          |
+   | M-RET                                           | Insere o próximo ítem                            |
+   | Shift-setas laterais                            | Altera o marcador da lista                       |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Iniciar uma lista                               | Criar checkbox                                   |
+   | Abrir [ dar um espaço e fechar ]                |                                                  |
+   | M-Shift-RET                                     | Insere o próximo checkbox                        |
+   | C-c C-x C-b C-c C-x C-b                         | Marcar/desmarcar checkbox                        |
+   |-------------------------------------------------+--------------------------------------------------|
+   | #+begin_src nomeLinguagem                       | Gerar bloco de código                            |
+   | digitarCodigo                                   |                                                  |
+   | #+end_src                                       |                                                  |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Colocar * no início e no fim da *palavra*         | Texto em negrito                                 |
+   | Colocar / no início e no fim da /palavra/         | Texto em itálico                                 |
+   | Colocar _ no início e no fim da _palavras_        | Texto sublinhado                                 |
+   |-------------------------------------------------+--------------------------------------------------|
+   | Shift-RET                                       | Se tem número acrescenta um na próxima linha     |
+   | Shift-RET                                       | Copia repete o valor da célula acima             |
+   | M-RET                                           | Conteúdo a partir do cursor para a próxima linha |
+   |-------------------------------------------------+--------------------------------------------------|
+   | [[file:<enderecoDaImagem>] ] - sem espaços      | Cria /link/ para imagem local                      |
+   | C-c C-x C-v                                     | Após criar o /link/ exibe a imagem no buffer       |
+   |-------------------------------------------------+--------------------------------------------------|
+   | M-x list-packages                               | Lista pacotes para instalação                    |
+   |-------------------------------------------------+--------------------------------------------------|
+   | [[http://xahlee.info/emacs/emacs/emacs_package_system.html][Como instalar pacotes]]                           | Página que ensina a instalar pacotes             |
+   |-------------------------------------------------+--------------------------------------------------|
+
+
+* INSTALAÇÃO DE SOFTWARES
+
+   | SOFTWARE                | MODO DE INSTALAÇÃO             | OBSERVAÇÕES                   |
+   |-------------------------+--------------------------------+-------------------------------|
+   | QTerminal               | sudo apt-get install qterminal |                               |
+   | VSCode                  | [[https://code.visualstudio.com/docs/setup/linux][Como instalar o VSCode]]         |                               |
+   | Emacs                   | sudo apt-get install emacs     |                               |
+   | Wine                    | [[https://wiki.debian.org/Wine#Installation_on_Debian_Jessie_and_newer][Como instalar o Wine]]           | Execução de softwares Windows |
+   | Lutris                  | [[https://lutris.net/downloads][Como instalar o Lutris]]         | Agredador de launchers games  |
+   | ***** Steam               | [[https://linuxconfig.org/how-to-install-steam-on-ubuntu-20-04-focal-fossa-linux][Como instalar a Steam]]          | Desnecessário com o Lutris    |
+   | ***** Heroic (Epic Games) | [[https://www.edivaldobrito.com.br/como-instalar-o-lancador-de-jogos-epic-heroic-games-launcher-no-linux/][Como instalar a Epic Games]]     | Desnecessário com o Lutris    |
+   |-------------------------+--------------------------------+-------------------------------|
+
+
+* SOCIOLOGIA
+
+** CONCEITOS BÁSICOS
+   - *<<sociologia>>Sociologia*: é uma das ciências humanas que estuda a sociedade, ou seja, estuda o comportamento
+     humano em função do meio e os processos que interligam os indivíduos em  associações, grupos e
+     instituições. Estuda os fenômenos sociais, tentando  explicá-los, analisando os homens em suas
+     relações de interdependência. A Sociologia  surgiu  como uma disciplina no século XVIII e seus
+     estudiosos não só esperavam entender o que unia os grupos  sociais, mas também  desenvolver um
+     “antídoto” para a desintegração social.
+
+     Hoje os sociólogos pesquisam macroestruturas inerentes  à organização da  sociedade, como raça
+     ou etnicidade, classe e gênero, além de instituições como a família; processos sociais que re-
+     presentam  divergência, ou  desarranjos, nestas estruturas, inclusive crime e divórcio. E pes-
+     quisam os microprocessos como relações interpessoais.
+
+
+* COMPUTAÇÃO
+
+** CONCEITOS
+   * *Tipos de linguagens*
+     - _<<compilada>>compilada_...: é uma linguagem de programação em que o código fonte é executado diretamente pe-
+       lo sistema operacional ou pelo processador, após ser traduzido por meio de um processo chamado
+       compilação, usando  um programa  de computador chamado compilador, para uma linguagem de baixo
+       nível, como linguagem de montagem ou código de máquina.
+
+     - _<<interpretada>>interpretada_: é uma linguagem de programação em que o código fonte é executado por um programa
+       de computador chamado interpretador, onde a interpretação e a execução do  programa  acontecem
+       em tempo real e independente do sistema operacional utilizado.
+
+   * *Paradígmas*
+     - _<<declarativo>>declarativo_.: esta programação dita que o programador deve modelar um dado problema através de
+       assertivas acerca dos objetos do universo de discurso, ou seja, definindo o relacionamento ló-
+       gico existente entre a cabeça e o corpo da cláusula, e nunca descrevendo como seus procedimen-
+       tos funcionam.
+
+     - _<<estruturado>>estruturado_.: padrão de programação da engenharia de softwares, com ênfase em sequência, deci-
+       são e, iteração (sub-rotinas, laços de repetição, condicionais e, estruturas em bloco).
+
+     - _<<funcional>>funcional_...: trata a computação como uma avaliação de funções matemáticas e que evita estados
+       ou dados mutáveis. Ela enfatiza a aplicação de funções, em contraste da programação imperativa
+       que enfatiza mudanças no estado do programa.[1] Enfatizando as expressões ao invés de comandos
+       as expressões são utilizados para cálculo de valores com dados imutáveis.
+
+     - _<<imperativo>>imperativo_..: sequência de comandos para o computador executar. sofrem no entanto de uma falta
+       de flexibilidade dadas o caráter sequencial das instruções.
+
+     - _<<POO>>orientado a objeto(POO)_:  baseado na abstração digital do mundo real, através  da composição e
+       interação  entre diversas unidades chamadas de objetos e as classes. Baseado em quatro princi-
+       pais componentes da programação: abstração digital, encapsulamento, herança e, polimorfismo.
+
+     - _<<procedural>>procedural_..: se baseia em procedimentos, que são executados numa sequência. Ela é derivada do
+       paradígma [[imperativo]], mas  acrescentando  procedimentos (em inglês, procedure calls), de forma
+       a organizar o código em blocos que possam ser reutilizados.
+
+
+* C/C++
+  
+** CONCEITOS
+   - *Linguagem C..*: é uma linguagem  [[compilada]] de  propósito  geral, baseada nos paradigmas [[imperativo]],
+     [[procedural]] e [[estruturado]], de alto nível e com acesso irrestrito a memória.
+
+   - *Linguagem C++*: linguagem de programação [[compilada]], multi-paradigma (seu  suporte  inclui linguagem
+     [[imperativo]], orientada a objetos([[POO]]) e genérica) de uso geral. Novas características foram adicio-
+     nadas com o tempo, como funções virtuais, sobrecarga de operadores, herança  múltipla, gabaritos e
+     trata mento de exceções. 
+
+   - *Argumentos MAIN*: Os nomes argc e argv são tradicionais, mas é possível nomeá-los como quiser.
+
+     + *argc*: Um inteiro que contém a contagem dos argumentos que seguem em argv. O parâmetro argc é sem
+       pre maior ou igual a 1.
+
+     + *argv*: Uma matriz de cadeias de caracteres terminadas em nulo  que representam argumentos de lin-
+       ha de comando inseridos pelo usuário do programa. Por convenção, argv[0] é o  comando com  que a
+       programa é invocado. argv[1], é o primeiro argumento da linha de comando. O último  argumento da
+       linha de comando é argv[argc - 1], sendo que argv[argc] é sempre NULL.
+
+       #+begin_src c++
+          int main(int argc, char * argv[]){
+	     
+	     << código >>
+
+	     return 0;
+          }
+       #+end_src
+

@@ -1,0 +1,43 @@
+#+TITLE: BUFFER DE TESTE
+#+AUTHOR: Thiago B. Ribeiro
+#+DATE: 21/07/2023
+
+* Primeiro tópico
+** Segundo nível
+*** Terceiro nível
+    *negrito*
+    /itálico/
+    _sublinhado_
+
+* Segundo tópico
+- item 1
+- item 2
+  
+* TODO Terceiro tópico
+  - State "CANCELLED"  from              [2023-07-20 qui 20:36]
+  - State "TODO"       from "DONE"       [2023-07-20 qui 20:36]
+  - State "DONE"       from "TODO"       [2023-07-20 qui 20:36]
+** DONE IN PROGRESS Segundo nível
+   - State "DONE"       from "DOING"      [2023-07-21 sex 18:08]
+   - State "DOING"      from "TODO"       [2023-07-21 sex 18:08]
+   - State "IN PROGRESS" from "DONE"       [2023-07-20 qui 21:31]
+   - State "DONE"       from "IN PROGRESS" [2023-07-20 qui 21:31]
+   - State "DONE"       from "TODO"       [2023-07-20 qui 20:35] \\
+     Teste 1
+** CANCELLED Teste
+   - State "CANCELLED"  from "HOLD"       [2023-07-21 sex 21:09]
+   - State "HOLD"       from "DOING"      [2023-07-21 sex 18:10]
+   - State "DOING"      from "TODO"       [2023-07-20 qui 21:39]
+     - alkdfjalkfjaçlkfdjaçldsfkaj
+       alçkfjaçlkjfaçlskjfçalksjfaçlsk
+     - çlkaslfjaslkdfjaçslkdfjaçslkdj
+   - State "TODO"       from "DOING"      [2023-07-20 qui 21:38]
+   - State "DOING"      from "TODO"       [2023-07-20 qui 21:37]
+   - State "DONE"       from "IN PROGRESS" [2023-07-20 qui 21:35]
+   - State "DONE"       from "IN PROGRESS" [2023-07-20 qui 21:33]
+* DOING Texto
+* HOLD Texto
+  - State "HOLD"       from "DONE"       [2023-07-21 sex 21:13]
+  - State "DONE"       from "DOING"      [2023-07-21 sex 21:13]
+  - State "DOING"      from "TODO"       [2023-07-21 sex 21:13]
+  - State "DOING"      from "TODO"       [2023-07-21 sex 21:12]
